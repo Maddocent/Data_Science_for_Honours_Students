@@ -1,1 +1,1 @@
-# Data_Science_for_Hounors_Students
+# Data_Science_for_Honours_Students
