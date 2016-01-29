@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -87,3 +87,369 @@ img {
 <li><a href="#installing-rstudio">Installing RStudio</a></li>
 <li><a href="#setting-up-github-account-and-creating-a-hello-world-repository">Setting up GitHub account and creating a “Hello World” repository</a></li>
 </ul></li>
+<li><a href="#assignment-1-set-up-and-submit-your-hello-world-github-respository-here"><em>Assignment 1: Set up and submit your “Hello World” GitHub respository here:</em></a></li>
+<li><a href="#the-working-directory-and-other-settings">The Working Directory and other settings</a><ul>
+<li><a href="#an-important-note-on-case-sensitivity">An important note on case sensitivity</a></li>
+<li><a href="#using-the-working-directory-in-r-scripts">Using the working directory in R scripts</a></li>
+</ul></li>
+<li><a href="#installing-packages-in-r">Installing packages in R</a></li>
+<li><a href="#preparing-for-lesson-1">Preparing for Lesson 1</a></li>
+<li><a href="#the-filter-function-dplyr">The filter function {dplyr}</a></li>
+<li><a href="#a-life-sciences-application-cell-culture-experiment">A Life Sciences application: Cell culture experiment</a></li>
+<li><a href="#getting-the-data">Getting the data</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="course-data-science-for-honours-students" class="section level1">
+<h1>COURSE: DATA SCIENCE FOR HONOURS STUDENTS</h1>
+<style type="text/css">
+
+body, td {
+   font-size: 18px;
+}
+code.r{
+  font-size: 18px;
+}
+pre {
+  font-size: 18px
+}
+</style>
+<div id="how-to-read-this-document" class="section level2">
+<h2>How to read this document</h2>
+<p>First, some pointers on how to read this document:</p>
+<ol style="list-style-type: decimal">
+<li><p>This document has been written in a scripting laguage called R-Markdown. This language provides the possibility to integrate code, it’s output and ‘narratives’ together.</p></li>
+<li><p>Whenever you see this <code>code line</code> that means that this a short example of code (R script) that you can try for yourself in RStudio.</p></li>
+<li><p>Whenever you see this</p></li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">calculation_result &lt;-<span class="st"> </span>(<span class="kw">log10</span>((<span class="dv">2</span>*<span class="dv">233</span>)^<span class="dv">2</span>))*<span class="dv">1000</span> 
+calculation_result</code></pre>
+<pre><code>## [1] 5336.772</code></pre>
+<p>The code is indicated in a gray area, the result of the code in a gray or white area and the result is indicated with ## (2 hashtags).</p>
+<p>Thoughout the text of the document:</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Functions are indicated as <strong><em>some function</em></strong></p></li>
+<li><p>Package names and packages are indicated as {some package}</p></li>
+</ol>
+</div>
+</div>
+<div id="unit-2-installing-r-and-rstudio-packages-settings-and-getting-help" class="section level1">
+<h1>UNIT 2: Installing R and RStudio, packages, settings and getting help</h1>
+<div id="topic-1-download-r-and-rstudio" class="section level2">
+<h2>Topic 1: Download R and RStudio</h2>
+<div id="installing-r" class="section level3">
+<h3>Installing R</h3>
+<p>To download and install R go to: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>. Select the appropriate Operating System (OS) that applies to your system. Download the .exe file to your computer and run it under administrator rights. I can advise you to just download and install R with all the default settings unchanged. That will ensure a smooth expeRience and a proper integration with RStudio.</p>
+</div>
+<div id="installing-rstudio" class="section level3">
+<h3>Installing RStudio</h3>
+<p>To install RStudio go to: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>. Again, select the appropriate download for your OS.</p>
+</div>
+<div id="setting-up-github-account-and-creating-a-hello-world-repository" class="section level3">
+<h3>Setting up GitHub account and creating a “Hello World” repository</h3>
+<p>To be able to access some of the code examples, handouts and other useful resources for this course, as well as for submitting code for some of the assigments and for the project, you will have to set up an account for GitHub. GitHub can be found at https//www.github.com</p>
+<p>To start with your own GitHub repository I recommend going though the steps of creating your first repository named “Hello World” In oder to do so follow the guidelines here: <a href="https://guides.github.com/activities/hello-world/" class="uri">https://guides.github.com/activities/hello-world/</a></p>
+</div>
+</div>
+<div id="assignment-1-set-up-and-submit-your-hello-world-github-respository-here" class="section level2">
+<h2><em>Assignment 1: Set up and submit your “Hello World” GitHub respository here:</em></h2>
+<p><a href="https://hubl.hu.nl/assignment/unit-2-installing-r-and-rstudio-assignment-1?9d54fc7a=15269" class="uri">https://hubl.hu.nl/assignment/unit-2-installing-r-and-rstudio-assignment-1?9d54fc7a=15269</a></p>
+</div>
+<div id="the-working-directory-and-other-settings" class="section level2">
+<h2>The Working Directory and other settings</h2>
+<p>RStudio can be customized for many aspects. Most of the setting can be found under the ‘tools’ tab, under Global Settings. Her we discuss two options:</p>
+<ol style="list-style-type: decimal">
+<li>Changing the font size:</li>
+</ol>
+<p>The working directory is where R stores all the objects that you <em><em>write</em></em> from R. It also the place where R looks if you command it to <em>read</em></p>
+<p>To set the global options for the working directory in RStudio watch this tutorial:</p>
+<p><a href="https://hubl.hu.nl/module/data-science-hp" class="uri">https://hubl.hu.nl/module/data-science-hp</a></p>
+<p>……………………… To get information on the currently set working directory you can typ: <code>getwd()</code> which will provide you with output in the console like</p>
+<p><code>[1] &quot;C:/RWorkingDir&quot;</code></p>
+<p>which indicates that the currently set working directory is a folder called “RWorkingDir” and it is located directly in the root of the ‘C:/’ partition of the hard drive of my computer.</p>
+<div id="an-important-note-on-case-sensitivity" class="section level3">
+<h3>An important note on case sensitivity</h3>
+<p>R is case sensitive; meaning that R knows the difference between a capital ‘R’ and a lower case ‘r’. In fact it knows the whole alphabet and knows the difference between ‘A’ to ‘Z’ and ‘a’ to ‘z’. Many errors come from the use of capitals where lowercase letter have to be used and vice versa. There is no real consensus on the use of capitals. Try to avoid them as much as possible so that you do not have to remember whether something was created using capitals or not. An important example are variable names in data frames and tables, which we will address in UNIT 3.</p>
+<p>As an example of the above point I will illustrate how objects are defined and named in R.</p>
+<p>if we want to create an object, let’s say a list of names we can use the following line:</p>
+<pre class="sourceCode r"><code class="sourceCode r">Names_list &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Joep&quot;</span>, <span class="st">&quot;John&quot;</span>, <span class="st">&quot;Mary&quot;</span>, <span class="st">&quot;Chris&quot;</span>, <span class="st">&quot;Jeff&quot;</span>)
+
+<span class="co"># Running this line of code in R will create an object named &quot;Names_list&quot;.</span>
+
+<span class="co"># The object will appear in the upper right window of RStudio (this section is called the Global Environment)</span>
+
+<span class="co"># Symantics: a list like this is called a string or a vector that consists of character objects. </span>
+
+<span class="co"># Character objects could be compared to 'text' in MS Office Excel</span></code></pre>
+<p>From the Global Environment (GlobalEnv) we can see that our newly created object has several characteristics: 1. ‘chr’ means that the object is of class ‘character’ 2. the length of the object is [number of rows, number of columns], in this case [1:5] means that is a one row that has 5 elements (names) 3. The elements that fit in the window are shown: “Joep” “Joh…. When you increase the size of the window, you will see more elements of the object.</p>
+<p>If we type:</p>
+<pre class="sourceCode r"><code class="sourceCode r">Names_list</code></pre>
+<pre><code>## [1] &quot;Joep&quot;  &quot;John&quot;  &quot;Mary&quot;  &quot;Chris&quot; &quot;Jeff&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(Names_list)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(Names_list)</code></pre>
+<pre><code>## [1] 5</code></pre>
+<p>We see that the ouput provides us with comparable information on the object as we can see in the GlobalEnv.</p>
+<p>Now try for yourself, and see what happens if you type:</p>
+<p><code>names(Names_List)</code></p>
+</div>
+<div id="using-the-working-directory-in-r-scripts" class="section level3">
+<h3>Using the working directory in R scripts</h3>
+<ol style="list-style-type: decimal">
+<li><p>Non-relative paths:</p></li>
+<li><p>Relative paths:</p></li>
+</ol>
+</div>
+</div>
+<div id="installing-packages-in-r" class="section level2">
+<h2>Installing packages in R</h2>
+<p>R comes with the Base R installation. In the Base R installation several useful packages are included, but to make use of the ful poweR of R we need to install additional packages. To see the currently installed packages on your system:</p>
+<pre class="sourceCode r"><code class="sourceCode r">installedPackages &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">installed.packages</span>())
+installedPackages &lt;-<span class="st"> </span><span class="kw">tbl_df</span>(installedPackages)
+rowNames &lt;-<span class="st"> </span><span class="kw">as.vector</span>(<span class="dv">1</span>:<span class="kw">nrow</span>(installedPackages))
+<span class="kw">rownames</span>(installedPackages) &lt;-<span class="st"> </span>rowNames 
+<span class="kw">print</span>(installedPackages)</code></pre>
+<pre><code>## Source: local data frame [69 x 16]
+## 
+##       Package                                                   LibPath
+##        (fctr)                                                    (fctr)
+## 1  assertthat C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## 2          BH C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## 3      bitops C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## 4        boot C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## 5     caTools C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## 6       chron C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## 7  colorspace C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## 8  data.table C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## 9         DBI C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## 10  dichromat C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## ..        ...                                                       ...
+## Variables not shown: Version (fctr), Priority (fctr), Depends (fctr),
+##   Imports (fctr), LinkingTo (fctr), Suggests (fctr), Enhances (fctr),
+##   License (fctr), License_is_FOSS (fctr), License_restricts_use (fctr),
+##   OS_type (fctr), MD5sum (fctr), NeedsCompilation (fctr), Built (fctr)</code></pre>
+<p>The number of installed packages can be obtained by looking at the dimensions of the table with the installed packages above. In this example (my own system) there were 69 packages installed.</p>
+</div>
+<div id="preparing-for-lesson-1" class="section level2">
+<h2>Preparing for Lesson 1</h2>
+<p>To be able to work with the examples in Lesson 1 you will need to install several packages. The below code installs them for you: remove the “#” in the code below, if you want to run the installation of the respective package. Some packages may be installed already on your system, depending on your level of experience. You can choose to do a new installation of the packages or skip this step if the packages below are already installed on your system. You can take a look at the table wit the packages that are installed on your system and that you have just created using <code>View(installedPackages)</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;lubridate&quot;)</span>
+<span class="co">#install.packages(&quot;reshape2&quot;)</span>
+<span class="co">#install.packages(&quot;stringr&quot;)</span>
+<span class="co">#install.packages(&quot;plyr&quot;)</span>
+<span class="co">#install.packages(&quot;dplyr&quot;)</span>
+<span class="co">#install.packages(&quot;ggplot2&quot;)</span>
+<span class="co">#install.packages(&quot;pastecs&quot;)</span>
+<span class="co">#install.packages(&quot;reshape&quot;)</span>
+
+<span class="co"># to load these packages into R:</span>
+<span class="kw">library</span>(lubridate)
+<span class="kw">library</span>(reshape2)
+<span class="kw">library</span>(stringr)
+<span class="kw">library</span>(plyr); <span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(pastecs)
+<span class="kw">library</span>(reshape)</code></pre>
+<p>One way to check whether a package is already installed is by typing:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(installedPackages, Package==<span class="st">&quot;name of package&quot;</span></code></pre>
+</div>
+<div id="the-filter-function-dplyr" class="section level2">
+<h2>The filter function {dplyr}</h2>
+<p>In the code above we used the <strong><em>filter</em></strong> function from the {dplyr} package (the package to which the function belongs is indicated between {} in this document, functions are indicated in italics) to check whether a package has been installe don our system. The <strong><em>filter</em></strong> function can be used to conditionally filter elements from a data table or data frame. The difference between a data table and a data frame will be explained later. To select items we used the <code>==</code> operator to filter only the rows that meet the criterion: in this case: <code>Package == &quot;ggplot2&quot;</code>. In this case there is only one package called ggplot2 and the 16 characteristics (variables) for this one package are listed to the console after the call.</p>
+<p>Other, so-called <em>logical</em> and <em>boolean</em> operators in R are:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">operator</th>
+<th align="left">what is does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>&lt;</code></td>
+<td align="left"><em>less than</em></td>
+</tr>
+<tr class="even">
+<td align="left"><code>&gt;</code></td>
+<td align="left"><em>more than</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>&lt;=</code></td>
+<td align="left"><em>less than or equal to</em></td>
+</tr>
+<tr class="even">
+<td align="left"><code>&gt;=</code></td>
+<td align="left"><em>more than or equal to</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>|</code></td>
+<td align="left"><em>or</em></td>
+</tr>
+<tr class="even">
+<td align="left"><code>&amp;</code></td>
+<td align="left"><em>and</em></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong><em>filter</em></strong> function takes the general form:</p>
+<p><code>filter(data, variable operator &quot;condition&quot;)</code></p>
+<p>Because <strong><em>filter</em></strong> is part of the functions of the “dplyr” package it only works if dplyr is loaded. If dplyr is not loaded you will get an error in the console stating:</p>
+<p><code>Error: could not find function filter</code></p>
+<p>This in general is an indication that you forgot to load (with the function <em><strong>library()</strong></em>) a package that defines the requested (or as we say in Rish: ‘called’) function. No problem, just go ahead and load the package with <code>library(&quot;package name&quot;)</code>. It happens to the best of us!</p>
+<p>When we want to store the result of <strong><em>filter</em></strong> in new object we can execute:</p>
+<p><code>Filtered &lt;- filter(data, variable == &quot;condition&quot;)</code></p>
+<p>For example, when we want to see whether the plotting package “ggplot2” is installed on our system we can call:</p>
+<pre class="sourceCode r"><code class="sourceCode r">ggplot2 &lt;-<span class="st"> </span><span class="kw">filter</span>(installedPackages, Package==<span class="st">&quot;ggplot2&quot;</span>)
+<span class="kw">print</span>(ggplot2)</code></pre>
+<pre><code>## Source: local data frame [1 x 16]
+## 
+##   Package                                                   LibPath
+##    (fctr)                                                    (fctr)
+## 1 ggplot2 C:/RWorkingDir/DSfHP/packrat/lib/x86_64-w64-mingw32/3.2.3
+## Variables not shown: Version (fctr), Priority (fctr), Depends (fctr),
+##   Imports (fctr), LinkingTo (fctr), Suggests (fctr), Enhances (fctr),
+##   License (fctr), License_is_FOSS (fctr), License_restricts_use (fctr),
+##   OS_type (fctr), MD5sum (fctr), NeedsCompilation (fctr), Built (fctr)</code></pre>
+<p>The above exercise provides a nice exampe of some of the basic syntax (language) principles of R. When you want to create an object from a calculation or from a <em>call</em> to a function we use</p>
+<p><code>objectName &lt;- function(call)</code></p>
+<p>to assign the result of the function call to a new object and store this in the Global Environment. R can do some pretty complicated calculations for you, when you get a hang of it. But it can also function as a simple calculator. Try the following to see the calculative power of R:</p>
+<pre class="sourceCode r"><code class="sourceCode r">No_cells_Packages &lt;-<span class="st"> </span><span class="kw">nrow</span>(installedPackages) *<span class="st"> </span><span class="kw">ncol</span>(installedPackages)
+<span class="co"># how many cells does the data table have?</span></code></pre>
+</div>
+<div id="a-life-sciences-application-cell-culture-experiment" class="section level2">
+<h2>A Life Sciences application: Cell culture experiment</h2>
+<p>Now let’s try something more complicated: Assume that we need to calculate a dilution factor for a cell culture experiment. We want to culture human stem cells in a 24-wells format culture vessel and expose them to four different concentration of a mutagenic substance Benzo-a-Pyrene (BaP). BaP has a molecular weight of 252.31 g/mol. The concentration of the stock solution BaP needs to be 1E-3 mol/L. We want to expose the cells to four concentrations: 1E-4, 1E-5, 1E-6, 1E-7 mol/L.</p>
+<ol style="list-style-type: decimal">
+<li>To make the dilutions we could do this in R in the following way</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">stockBaP &lt;-<span class="st"> </span><span class="fl">1E-3</span>
+<span class="co"># BaP is soluble in water so we will use medium to dilute it</span>
+<span class="co"># the volume of the amount of medium that will finaly be in the well has to be 2 ml. </span>
+
+<span class="co"># per concentration we need a 2x concentrated dilution so that we can dilute one part of cellsuspension with one part of substance dilution:</span>
+
+<span class="co"># the number of conditions is </span>
+numerConditions &lt;-<span class="st"> </span><span class="dv">4+1</span>
+
+volumeSubstance &lt;-<span class="st"> </span>(<span class="dv">24</span>/<span class="dv">5</span>)*<span class="dv">1</span>
+
+<span class="co"># dilutions</span>
+
+
+  
+  
+  
+
+<span class="co"># well 1-4: 1E-4 M BaP -&gt; we </span>
+
+
+<span class="co"># well 5-8: 1E-5 M Bap </span></code></pre>
+<ol style="list-style-type: decimal">
+<li>first we create a mother suspension of the cells by detaching the cells from the culture vessel, using trypsine</li>
+<li>We make a 1:10 dilution of the</li>
+<li>The cells are counted with a Burker-Turk counting chamber</li>
+</ol>
+</div>
+<div id="getting-the-data" class="section level2">
+<h2>Getting the data</h2>
+<p>Before we can move on to perfoming our first data manipulations we need to set the proper working directory. To view the current working directory type:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getwd</span>()</code></pre>
+<p>To set the working directory use:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Exercise 1: &quot;billboard&quot;</span>
+## Loading the required data set &quot;&quot; into R
+
+To obtain the file a couple of steps are needed:
+<span class="dv">1</span>. Set up an account for yourself on www.github.com if you did not already do this.
+<span class="dv">2</span><span class="er">)</span> Create a new repository in your own account called:<span class="st"> &quot;hello-world&quot;</span>. If you are unsure about this step:<span class="st"> </span>take a look at this instruction:
+
+https:<span class="er">//</span>guides.github.com/activities/hello-world/
+
+<span class="dv">2</span><span class="er">)</span> Navigate to the repository mentioned above and <span class="st">'fork'</span> the repository to your own repository
+
+
+To download the data into R we will use a direct method. It does not matter if the code below does not make  sense to you.
+
+
+The required data files for the exercise below are availabe
+in your instructors Github directory:
+
+The following
+Download the file
+https:<span class="er">//</span>github.com/Maddocent/tidy-data/blob/master/data/billboard.csv
+
+
+
+
+
+<span class="kw">source</span>(<span class="st">&quot;xtable.r&quot;</span>)
+
+raw &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;billboard.csv&quot;</span>)
+raw &lt;-<span class="st"> </span>raw[, <span class="kw">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;artist.inverted&quot;</span>, <span class="st">&quot;track&quot;</span>, <span class="st">&quot;time&quot;</span>, <span class="st">&quot;date.entered&quot;</span>, <span class="st">&quot;x1st.week&quot;</span>, <span class="st">&quot;x2nd.week&quot;</span>, <span class="st">&quot;x3rd.week&quot;</span>, <span class="st">&quot;x4th.week&quot;</span>, <span class="st">&quot;x5th.week&quot;</span>, <span class="st">&quot;x6th.week&quot;</span>, <span class="st">&quot;x7th.week&quot;</span>, <span class="st">&quot;x8th.week&quot;</span>, <span class="st">&quot;x9th.week&quot;</span>, <span class="st">&quot;x10th.week&quot;</span>, <span class="st">&quot;x11th.week&quot;</span>, <span class="st">&quot;x12th.week&quot;</span>, <span class="st">&quot;x13th.week&quot;</span>, <span class="st">&quot;x14th.week&quot;</span>, <span class="st">&quot;x15th.week&quot;</span>, <span class="st">&quot;x16th.week&quot;</span>, <span class="st">&quot;x17th.week&quot;</span>, <span class="st">&quot;x18th.week&quot;</span>, <span class="st">&quot;x19th.week&quot;</span>, <span class="st">&quot;x20th.week&quot;</span>, <span class="st">&quot;x21st.week&quot;</span>, <span class="st">&quot;x22nd.week&quot;</span>, <span class="st">&quot;x23rd.week&quot;</span>, <span class="st">&quot;x24th.week&quot;</span>, <span class="st">&quot;x25th.week&quot;</span>, <span class="st">&quot;x26th.week&quot;</span>, <span class="st">&quot;x27th.week&quot;</span>, <span class="st">&quot;x28th.week&quot;</span>, <span class="st">&quot;x29th.week&quot;</span>, <span class="st">&quot;x30th.week&quot;</span>, <span class="st">&quot;x31st.week&quot;</span>, <span class="st">&quot;x32nd.week&quot;</span>, <span class="st">&quot;x33rd.week&quot;</span>, <span class="st">&quot;x34th.week&quot;</span>, <span class="st">&quot;x35th.week&quot;</span>, <span class="st">&quot;x36th.week&quot;</span>, <span class="st">&quot;x37th.week&quot;</span>, <span class="st">&quot;x38th.week&quot;</span>, <span class="st">&quot;x39th.week&quot;</span>, <span class="st">&quot;x40th.week&quot;</span>, <span class="st">&quot;x41st.week&quot;</span>, <span class="st">&quot;x42nd.week&quot;</span>, <span class="st">&quot;x43rd.week&quot;</span>, <span class="st">&quot;x44th.week&quot;</span>, <span class="st">&quot;x45th.week&quot;</span>, <span class="st">&quot;x46th.week&quot;</span>, <span class="st">&quot;x47th.week&quot;</span>, <span class="st">&quot;x48th.week&quot;</span>, <span class="st">&quot;x49th.week&quot;</span>, <span class="st">&quot;x50th.week&quot;</span>, <span class="st">&quot;x51st.week&quot;</span>, <span class="st">&quot;x52nd.week&quot;</span>, <span class="st">&quot;x53rd.week&quot;</span>, <span class="st">&quot;x54th.week&quot;</span>, <span class="st">&quot;x55th.week&quot;</span>, <span class="st">&quot;x56th.week&quot;</span>, <span class="st">&quot;x57th.week&quot;</span>, <span class="st">&quot;x58th.week&quot;</span>, <span class="st">&quot;x59th.week&quot;</span>, <span class="st">&quot;x60th.week&quot;</span>, <span class="st">&quot;x61st.week&quot;</span>, <span class="st">&quot;x62nd.week&quot;</span>, <span class="st">&quot;x63rd.week&quot;</span>, <span class="st">&quot;x64th.week&quot;</span>, <span class="st">&quot;x65th.week&quot;</span>, <span class="st">&quot;x66th.week&quot;</span>, <span class="st">&quot;x67th.week&quot;</span>, <span class="st">&quot;x68th.week&quot;</span>, <span class="st">&quot;x69th.week&quot;</span>, <span class="st">&quot;x70th.week&quot;</span>, <span class="st">&quot;x71st.week&quot;</span>, <span class="st">&quot;x72nd.week&quot;</span>, <span class="st">&quot;x73rd.week&quot;</span>, <span class="st">&quot;x74th.week&quot;</span>, <span class="st">&quot;x75th.week&quot;</span>, <span class="st">&quot;x76th.week&quot;</span>)]
+<span class="kw">names</span>(raw)[<span class="dv">2</span>] &lt;-<span class="st"> &quot;artist&quot;</span>
+
+raw$artist &lt;-<span class="st"> </span><span class="kw">iconv</span>(raw$artist, <span class="st">&quot;MAC&quot;</span>, <span class="st">&quot;ASCII//translit&quot;</span>)
+raw$track &lt;-<span class="st"> </span><span class="kw">str_replace</span>(raw$track, <span class="st">&quot; </span><span class="ch">\\</span><span class="st">(.*?</span><span class="ch">\\</span><span class="st">)&quot;</span>, <span class="st">&quot;&quot;</span>)
+<span class="kw">names</span>(raw)[-(<span class="dv">1</span>:<span class="dv">5</span>)] &lt;-<span class="st"> </span><span class="kw">str_c</span>(<span class="st">&quot;wk&quot;</span>, <span class="dv">1</span>:<span class="dv">76</span>)
+raw &lt;-<span class="st"> </span><span class="kw">arrange</span>(raw, year, artist, track)
+
+long_name &lt;-<span class="st"> </span><span class="kw">nchar</span>(raw$track) &gt;<span class="st"> </span><span class="dv">20</span>
+raw$track[long_name] &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="kw">substr</span>(raw$track[long_name], <span class="dv">0</span>, <span class="dv">20</span>), <span class="st">&quot;...&quot;</span>)
+
+
+<span class="kw">xtable</span>(raw[<span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">3</span>, <span class="dv">6</span>:<span class="dv">10</span>), <span class="dv">1</span>:<span class="dv">8</span>], <span class="st">&quot;billboard-raw.tex&quot;</span>)
+
+clean &lt;-<span class="st"> </span><span class="kw">melt</span>(raw, <span class="dt">id =</span> <span class="dv">1</span>:<span class="dv">5</span>, <span class="dt">na.rm =</span> T)
+clean$week &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="kw">str_replace_all</span>(clean$variable, <span class="st">&quot;[^0-9]+&quot;</span>, <span class="st">&quot;&quot;</span>))
+clean$variable &lt;-<span class="st"> </span><span class="ot">NULL</span>
+
+clean$date.entered &lt;-<span class="st"> </span><span class="kw">ymd</span>(clean$date.entered)
+clean$date &lt;-<span class="st"> </span>clean$date.entered +<span class="st"> </span><span class="kw">weeks</span>(clean$week -<span class="st"> </span><span class="dv">1</span>)
+clean$date.entered &lt;-<span class="st"> </span><span class="ot">NULL</span>
+clean &lt;-<span class="st"> </span><span class="kw">rename</span>(clean, <span class="kw">c</span>(<span class="st">&quot;value&quot;</span> =<span class="st"> &quot;rank&quot;</span>))
+clean &lt;-<span class="st"> </span><span class="kw">arrange</span>(clean, year, artist, track, time, week)
+clean &lt;-<span class="st"> </span>clean[<span class="kw">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;artist&quot;</span>, <span class="st">&quot;time&quot;</span>, <span class="st">&quot;track&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;week&quot;</span>, <span class="st">&quot;rank&quot;</span>)]
+
+clean_out &lt;-<span class="st"> </span><span class="kw">mutate</span>(clean, 
+                    <span class="dt">date =</span> <span class="kw">as.character</span>(date))
+<span class="kw">xtable</span>(clean_out[<span class="dv">1</span>:<span class="dv">15</span>, ], <span class="st">&quot;billboard-clean.tex&quot;</span>)
+
+<span class="co"># Normalisation --------------------------------------------------------------</span>
+
+song &lt;-<span class="st"> </span><span class="kw">unrowname</span>(<span class="kw">unique</span>(clean[<span class="kw">c</span>(<span class="st">&quot;artist&quot;</span>, <span class="st">&quot;track&quot;</span>, <span class="st">&quot;time&quot;</span>)]))
+song$id &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="kw">nrow</span>(song)
+
+narrow &lt;-<span class="st"> </span>song[<span class="dv">1</span>:<span class="dv">15</span>, <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>,<span class="st">&quot;artist&quot;</span>, <span class="st">&quot;track&quot;</span>, <span class="st">&quot;time&quot;</span>)]
+<span class="kw">xtable</span>(narrow, <span class="st">&quot;billboard-song.tex&quot;</span>)
+
+rank &lt;-<span class="st"> </span><span class="kw">join</span>(clean, song, <span class="dt">match =</span> <span class="st">&quot;first&quot;</span>)
+rank &lt;-<span class="st"> </span>rank[<span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;rank&quot;</span>)]
+rank$date &lt;-<span class="st"> </span><span class="kw">as.character</span>(rank$date)
+<span class="kw">xtable</span>(rank[<span class="dv">1</span>:<span class="dv">15</span>, ], <span class="st">&quot;billboard-rank.tex&quot;</span>)</code></pre>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
